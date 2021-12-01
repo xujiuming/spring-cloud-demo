@@ -10,10 +10,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>base</artifactId>
+    <name>基础服务模块</name>
+    <description>提供公共的服务配置</description>
 
-    <properties>
-        <maven.compiler.source>15</maven.compiler.source>
-        <maven.compiler.target>15</maven.compiler.target>
-    </properties>
 
 </project>
