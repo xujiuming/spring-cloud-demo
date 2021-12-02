@@ -2074,6 +2074,6 @@ jemalloc-bg-thread yes
 * 启动
 
 ```shell
-docker-compose -f redis.yaml up
+docker-compose -f redis.yaml up -d
 ```
 

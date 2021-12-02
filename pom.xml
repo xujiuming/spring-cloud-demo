@@ -24,7 +24,7 @@
         <maven.compiler.target>11</maven.compiler.target>
         <jdk.version>11</jdk.version>
         <encoding>UTF-8</encoding>
-        <spring-boot.version>2.6.1</spring-boot.version>
+        <spring-boot.version>2.5.7</spring-boot.version>
         <spring-platform.version>Cairo-SR8</spring-platform.version>
         <spring.cloud.version>2020.0.3</spring.cloud.version>
         <spring.cloud.alibaba.version>2.2.0.RELEASE</spring.cloud.alibaba.version>
@@ -136,7 +136,7 @@
                     <source>${jdk.version}</source>
                     <target>${jdk.version}</target>
                     <encoding>${encoding}</encoding>
-                    <compilerArgs>--enable-preview</compilerArgs>
+<!--                    <compilerArgs>&#45;&#45;enable-preview</compilerArgs>-->
                     <forceJavacCompilerUse>true</forceJavacCompilerUse>
                     <annotationProcessorPaths>
                         <path>

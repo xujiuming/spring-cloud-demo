@@ -40,6 +40,6 @@ services:
 * 启动 
 
 ```shell
-docker-compose -f nacos.yaml up
+docker-compose -f nacos.yaml up -d
 ```
 

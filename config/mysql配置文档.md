@@ -20,6 +20,6 @@ services:
 * 启动
 
 ```shell
-docker-compose -f mysql.yaml up
+docker-compose -f mysql.yaml up -d 
 ```
 
