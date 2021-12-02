@@ -137,6 +137,7 @@
                     <target>${jdk.version}</target>
                     <encoding>${encoding}</encoding>
                     <compilerArgs>--enable-preview</compilerArgs>
+                    <forceJavacCompilerUse>true</forceJavacCompilerUse>
                     <annotationProcessorPaths>
                         <path>
                             <groupId>org.mapstruct</groupId>

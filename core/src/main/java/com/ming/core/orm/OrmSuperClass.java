@@ -14,7 +14,6 @@ import org.hibernate.annotations.Parameter;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
-import java.io.Serial;
 import java.io.Serializable;
 
 /**
@@ -31,7 +30,6 @@ import java.io.Serializable;
 @MappedSuperclass
 @JsonIgnoreProperties(value = {"hibernateLazyInitializer", "handler"})
 public class OrmSuperClass implements Serializable {
-    @Serial
     private static final long serialVersionUID = 1L;
 
     @Id
