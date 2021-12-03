@@ -1,4 +1,4 @@
-package com.ming.user.service.impl;
+package com.ming.user.api.service.impl;
 
 import com.ming.user.api.service.IUserService;
 import org.apache.dubbo.config.annotation.Service;

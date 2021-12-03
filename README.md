@@ -11,3 +11,6 @@
 * base 公共业务模块配置
 * core 核心无状态函数工具类
 * user common 业务模块  
+
+
+--add-opens java.base/java.lang=ALL-UNNAMED 
