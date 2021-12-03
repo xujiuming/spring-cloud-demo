@@ -1,5 +1,8 @@
 server:
   port: 10001
+#dubbo.reference.check=false，强制改变所有reference的check值，就算配置中有声明，也会被覆盖。
+#dubbo.consumer.check=false，是设置check的缺省值，如果配置中有显式的声明，如：<dubbo:reference check="true"/>，不会受影响。
+#dubbo.registry.check=false，前面两个都是指订阅成功，但提供者列表是否为空是否报错，如果注册订阅失败时，也允许启动，需使用此选项，将在后台定时重试。
 dubbo:
   scan:
     base-packages: com.ming.user.api.service
@@ -8,6 +11,11 @@ dubbo:
     port: -1
   registry:
     address: spring-cloud://show.xujiuming.com
+    check: false
+  consumer:
+    check: false
+  reference:
+    check: false
   cloud:
     # *  or 多个服务用,分割
     subscribed-services: common
@@ -20,4 +28,4 @@ spring:
         server-addr: show.xujiuming.com:8848
   main:
     allow-bean-definition-overriding: true
-    allow-circular-references: true
+
