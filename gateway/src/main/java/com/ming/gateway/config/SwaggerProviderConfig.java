@@ -45,6 +45,8 @@ public class SwaggerProviderConfig implements SwaggerResourcesProvider {
         SwaggerResource swaggerResource = new SwaggerResource();
         swaggerResource.setName(name);
         swaggerResource.setLocation(location);
+        //不设定版本  knife4j ui 会报错
+        swaggerResource.setSwaggerVersion("2.0");
         return swaggerResource;
     }
 }
