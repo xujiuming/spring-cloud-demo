@@ -1,5 +1,7 @@
 package com.ming.core.annotation;
 
+import org.springframework.stereotype.Service;
+
 import java.lang.annotation.*;
 
 /**
@@ -11,6 +13,7 @@ import java.lang.annotation.*;
 @Target(value = {ElementType.FIELD, ElementType.TYPE})
 @Retention(value = RetentionPolicy.RUNTIME)
 @Documented
+@Service
 public @interface Describe {
     /**
      * 描述内容
