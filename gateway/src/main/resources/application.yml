@@ -6,11 +6,11 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: user-route
+        - id: 用户服务
           uri: lb://user
           predicates:
             - Path=/user/**
-        - id: common-route
+        - id: 基础服务
           uri: lb://common
           predicates:
             - Path=/common/**
