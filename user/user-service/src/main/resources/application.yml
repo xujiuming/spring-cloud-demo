@@ -8,6 +8,9 @@ dubbo:
     port: -1
   registry:
     address: spring-cloud://show.xujiuming.com
+  cloud:
+    # *  or 多个服务用,分割
+    subscribed-services: common
 spring:
   application:
     name: user
