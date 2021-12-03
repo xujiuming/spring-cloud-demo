@@ -12,7 +12,7 @@ public class TestController {
     @Reference
     private ITestService testService;
 
-    @GetMapping("/test")
+    @GetMapping("/user/test")
     public String test(){
         return testService.hello("userTest");
     }
