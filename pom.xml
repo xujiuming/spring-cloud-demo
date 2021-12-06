@@ -17,6 +17,7 @@
         <module>gateway</module>
         <module>core</module>
         <module>base</module>
+        <module>rsocket-server</module>
     </modules>
     <repositories>
         <repository>
