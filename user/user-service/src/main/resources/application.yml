@@ -28,6 +28,15 @@ spring:
     nacos:
       discovery:
         server-addr: show.xujiuming.com:8848
+    stream:
+      bindings:
+        testTopic:
+          destination: test-topic # 目的地。这里使用 RocketMQ Topic
+          content-type: text/plain # 内容格式。这里使用 JSON
+
+      rocketmq:
+        binder:
+          name-server: show.xujiuming.com:9876
+
   main:
     allow-bean-definition-overriding: true
-
