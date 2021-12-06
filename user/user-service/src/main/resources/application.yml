@@ -30,13 +30,18 @@ spring:
         server-addr: show.xujiuming.com:8848
     stream:
       bindings:
-        testTopic:
+        testTopic-out-0:
           destination: test-topic # 目的地。这里使用 RocketMQ Topic
           content-type: text/plain # 内容格式。这里使用 JSON
-
+        testTopic-in-0:
+          group: testGroup
+          destination: test-topic # 目的地。这里使用 RocketMQ Topic
+          content-type: text/plain # 内容格式。这里使用 JSON
       rocketmq:
         binder:
           name-server: show.xujiuming.com:9876
-
+          access-key: mingMq
+          secret-key: Ming1234
   main:
     allow-bean-definition-overriding: true
+    allow-circular-references: true

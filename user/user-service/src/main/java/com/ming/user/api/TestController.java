@@ -4,6 +4,7 @@ import com.ming.common.api.service.ITestService;
 import org.apache.dubbo.config.annotation.Reference;
 import org.hibernate.internal.util.StringHelper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.stream.function.StreamBridge;
 import org.springframework.messaging.Message;
 import org.springframework.messaging.MessageHeaders;
 import org.springframework.messaging.support.MessageBuilder;
@@ -16,15 +17,11 @@ public class TestController {
     @Reference
     private ITestService testService;
     @Autowired
-    private MqService mqService;
+    private StreamBridge streamBridge;
 
     @GetMapping("/test")
     public String test(){
-        Message<String> message= MessageBuilder
-                .withPayload("testTopic消息")
-                .build()
-                ;
-        mqService.out().send(message);
+        streamBridge.send("testTopic-out-0","testTopic消息");
         return testService.hello("userTest");
     }
 }
