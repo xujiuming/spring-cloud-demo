@@ -37,6 +37,8 @@ spring:
           group: testGroup
           destination: test-topic # 目的地。这里使用 RocketMQ Topic
           content-type: text/plain # 内容格式。这里使用 JSON
+      function:
+        definition:  testTopic
       rocketmq:
         binder:
           name-server: show.xujiuming.com:9876
