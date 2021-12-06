@@ -1,13 +1,13 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="StartCommon" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-    <module name="common-service" />
+  <configuration default="false" name="StartGateway" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+    <module name="gateway" />
     <extension name="coverage">
       <pattern>
-        <option name="PATTERN" value="com.ming.common.*" />
+        <option name="PATTERN" value="com.ming.gateway.*" />
         <option name="ENABLED" value="true" />
       </pattern>
     </extension>
-    <option name="SPRING_BOOT_MAIN_CLASS" value="com.ming.common.StartCommon" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="com.ming.gateway.StartGateway" />
     <option name="VM_PARAMETERS" value="--add-opens java.base/java.lang=ALL-UNNAMED -Xmx128m" />
     <option name="ALTERNATIVE_JRE_PATH" />
     <option name="SHORTEN_COMMAND_LINE" value="NONE" />
