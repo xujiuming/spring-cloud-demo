@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import java.time.Duration;
 import java.time.LocalDateTime;
 
 @Controller
@@ -22,7 +23,7 @@ public class TestRsocketController {
     @MessageMapping("test-rsocket-req-stream")
     public Flux<String> requestStream(Mono<String> message) {
         log.info("测试req-stream模式:{}", message);
-        return Flux.range(0, 100).map(m -> "测试req-stream模式" + m + ":" + message + ":" + LocalDateTime.now());
+        return Flux.interval(Duration.ofSeconds(1)).map(m -> "测试req-stream模式" + m + ":" + message + ":" + LocalDateTime.now());
     }
 
     @MessageMapping("test-rsocket-fire-and-forget")

@@ -1,9 +1,13 @@
 package com.ming.rsocket;
 
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.messaging.rsocket.RSocketRequester;
 import reactor.core.publisher.Flux;
 
+import java.time.Duration;
+
+@Slf4j
 public class TestRsocketClient {
     RSocketRequester requester = RSocketRequester.builder().tcp("localhost", 20000);
 
@@ -40,13 +44,11 @@ public class TestRsocketClient {
 
     @Test
     public void testChannel() {
-        Flux flux = Flux.range(0,100).map(String::valueOf);
+        Flux flux = Flux.interval(Duration.ofSeconds(1)).map(String::valueOf);
         requester.route("test-rsocket-channel")
                 .data(flux)
                 .retrieveFlux(String.class)
-                .map(m -> {
-                    System.out.println(m);
-                    return m;
-                }).blockLast();
+                .log()
+                .blockLast();
     }
 }
