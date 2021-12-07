@@ -56,6 +56,7 @@
         <springfox.boot.version>3.0.0</springfox.boot.version>
         <spring-plugin.version>2.0.0.RELEASE</spring-plugin.version>
         <knife4j-spring-boot.version>3.0.3</knife4j-spring-boot.version>
+        <rsocket-bom.version>1.1.1</rsocket-bom.version>
 
     </properties>
 
@@ -94,6 +95,13 @@
                 <groupId>org.codehaus.groovy</groupId>
                 <artifactId>groovy-bom</artifactId>
                 <version>${groovy.bom.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>io.rsocket</groupId>
+                <artifactId>rsocket-bom</artifactId>
+                <version>${rsocket-bom.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>

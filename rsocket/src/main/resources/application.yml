@@ -2,3 +2,4 @@ spring:
   rsocket:
     server:
       port: 20000
+      transport: websocket
