@@ -2,6 +2,7 @@ package com.ming.rsocket;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.messaging.rsocket.RSocketRequester;
+import reactor.core.publisher.Flux;
 
 public class TestRsocketClient {
     RSocketRequester requester = RSocketRequester.builder().tcp("localhost", 20000);
@@ -34,5 +35,18 @@ public class TestRsocketClient {
                 .data("fffffffffffffffffffffffffffffffffffff")
                 .send()
                 .block();
+    }
+
+
+    @Test
+    public void testChannel() {
+        Flux flux = Flux.range(0,100).map(String::valueOf);
+        requester.route("test-rsocket-channel")
+                .data(flux)
+                .retrieveFlux(String.class)
+                .map(m -> {
+                    System.out.println(m);
+                    return m;
+                }).blockLast();
     }
 }

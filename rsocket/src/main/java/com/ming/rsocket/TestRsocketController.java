@@ -14,21 +14,26 @@ import java.time.LocalDateTime;
 public class TestRsocketController {
 
     @MessageMapping("test-rsocket-req-res")
-    public Mono<String> requestResponse(String message) {
+    public Mono<String> requestResponse(Mono<String> message) {
         log.info("测试rsocket req-res模式:{}", message);
         return Mono.just("测试rsocket req-res模式," + message);
     }
 
     @MessageMapping("test-rsocket-req-stream")
-    public Flux<String> requestStream(String message) {
+    public Flux<String> requestStream(Mono<String> message) {
         log.info("测试req-stream模式:{}", message);
         return Flux.range(0, 100).map(m -> "测试req-stream模式" + m + ":" + message + ":" + LocalDateTime.now());
     }
 
     @MessageMapping("test-rsocket-fire-and-forget")
-    public Mono<Void> fireAndForget(String message) {
+    public Mono<Void> fireAndForget(Mono<String> message) {
         log.info("测试fire-and-forget模式:{}", message);
         return Mono.empty();
+    }
+
+    @MessageMapping("test-rsocket-channel")
+    public Flux<String> channel(Flux<String> message) {
+        return message.map(m -> "测试channel模式:" + m + ":" + LocalDateTime.now());
     }
 
     @MessageExceptionHandler
