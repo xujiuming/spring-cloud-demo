@@ -17,6 +17,21 @@ spring:
     nacos:
       discovery:
         server-addr: show.xujiuming.com:8848
+        username: ming
+        password: ming
+      config:
+        #${prefix}-${spring.profiles.active}.${file-extension}
+        server-addr: show.xujiuming.com:8848
+        file-extension: yaml
+        username: ming
+        password: ming
+        # 命名空间的uuid
+        namespace:
+        # 分组
+        group: MING_CONFIG_GROUP
+
+
+
   main:
     allow-bean-definition-overriding: true
     allow-circular-references: true

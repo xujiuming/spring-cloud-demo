@@ -7,7 +7,7 @@
 * Seata 分布式事务控制
 * bus+stream 使用rabbit mq  
 * sleuth  使用zipkin做链路跟踪 
-* gateway +swagger 网关+接口文档
+* gateway + swagger 网关+接口文档
 * base 公共业务模块配置
 * core 核心无状态函数工具类
 * user common 业务模块  
